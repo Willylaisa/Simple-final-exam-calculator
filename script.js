@@ -25,6 +25,10 @@ function addAssessments() {
         `;
         assessmentsContainer.appendChild(assessmentDiv);
     }
+
+    // Show the desired grade and calculate sections
+    document.getElementById('desiredGradeSection').style.display = 'block';
+    document.getElementById('calculateButton').style.display = 'block';
 }
 
 function calculateFinalExam() {
