@@ -78,9 +78,9 @@ function calculateFinalExam() {
     const resultText = document.getElementById('result');
 
     if (requiredGrade > 100) {
-        resultText.innerHTML = `:( Sorry mate! You need to get ${requiredGrade.toFixed(2)}% in the final exam to score ${desiredGrade}% in this unit. Try harder next time.`;
+        resultText.innerHTML = `😥Sorry mate! You need to get ${requiredGrade.toFixed(2)}% in the final exam to score ${desiredGrade}% in this unit. Try harder next time.`;
     } else {
-        resultText.innerHTML = `:) WooHoo!!! You just need to get ${requiredGrade.toFixed(2)}% in the final exam to score ${desiredGrade}% in this unit. You got this!!!`;
+        resultText.innerHTML = `🎉WooHoo!!! You just need to get ${requiredGrade.toFixed(2)}% in the final exam to score ${desiredGrade}% in this unit. You got this!!!`;
     }
 
     // Show modal
