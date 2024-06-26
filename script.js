@@ -1,5 +1,6 @@
 document.getElementById('addAssessments').addEventListener('click', addAssessments);
 document.getElementById('calculateButton').addEventListener('click', calculateFinalExam);
+document.getElementById('closeModal').addEventListener('click', closeModal);
 
 function addAssessments() {
     const assessmentCount = document.getElementById('assessmentCount').value;
@@ -74,11 +75,20 @@ function calculateFinalExam() {
     }
 
     const requiredGrade = ((desiredGrade - totalGrades) * 100) / finalExamWeight;
-    const resultDiv = document.getElementById('result');
+    const resultText = document.getElementById('result');
 
     if (requiredGrade > 100) {
-        resultDiv.innerHTML = `:( Sorry mate! You need to get ${requiredGrade.toFixed(2)}% in the final exam to score ${desiredGrade}% in this unit. Try harder next time.`;
+        resultText.innerHTML = `:( Sorry mate! You need to get ${requiredGrade.toFixed(2)}% in the final exam to score ${desiredGrade}% in this unit. Try harder next time.`;
     } else {
-        resultDiv.innerHTML = `:) WooHoo!!! You just need to get ${requiredGrade.toFixed(2)}% in the final exam to score ${desiredGrade}% in this unit. You got this!!!`;
+        resultText.innerHTML = `:) WooHoo!!! You just need to get ${requiredGrade.toFixed(2)}% in the final exam to score ${desiredGrade}% in this unit. You got this!!!`;
     }
+
+    // Show modal
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('result-modal').style.display = 'block';
+}
+
+function closeModal() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('result-modal').style.display = 'none';
 }

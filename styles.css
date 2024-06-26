@@ -11,19 +11,19 @@ body {
 
 .container {
   background-color: white;
-  padding: 30px;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  max-width: 600px;
   width: 100%;
-  margin: 20px;
+  max-width: 600px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.5em;
   margin-bottom: 20px;
   color: #007BFF;
 }
@@ -78,26 +78,17 @@ button:focus {
   box-shadow: 0 0 5px #007BFF;
 }
 
-#result {
-  margin-top: 20px;
-  font-size: 1.4em;
-  font-weight: bold;
-  color: #333;
-  animation: fadeIn 0.5s ease-in-out;
-  text-align: center;
-}
-
 /* Assessments Grid */
 #assessments {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 10px;
   width: 100%;
 }
 
 .assessment-group {
   background-color: #f9f9f9;
-  padding: 15px;
+  padding: 10px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -107,10 +98,60 @@ button:focus {
   color: #007BFF;
 }
 
+/* Modal Styles */
+#result-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+}
+
+#result-modal p {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+#result-modal button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#result-modal button:hover {
+  background-color: #0056b3;
+}
+
+/* Overlay */
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .container {
-      max-width: 400px;
+      max-width: 100%;
+      padding: 15px;
   }
 
   input[type="number"], button {
@@ -120,11 +161,16 @@ button:focus {
 
 @media (max-width: 480px) {
   .container {
-      max-width: 300px;
+      max-width: 100%;
+      padding: 10px;
   }
 
   input[type="number"], button {
       padding: 8px;
+  }
+
+  h1 {
+      font-size: 1.2em;
   }
 }
 
